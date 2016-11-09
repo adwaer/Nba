@@ -12,7 +12,7 @@ namespace Nba.Dal.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "Nba.Dal.DefaultCtx";
         }
 
