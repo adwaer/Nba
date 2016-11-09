@@ -1,0 +1,68 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.team {
+    padding: 0 3px 0 0;
+}
+
+.loser {
+    background-color: #ff2300;
+    background-color: rgba(255, 35, 0, 0.55);
+    border: 1px solid #ff2300;
+    border: 1px solid rgba(255, 35, 0, 0.55);
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.winner {
+    background-color: #008000;
+    background-color: rgba(0, 128, 0, 0.55);
+    border: 1px solid #008000;
+    border: 1px solid rgba(0, 128, 0, 0.55);
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.gameparts {
+    font-size: 10px;
+    color: gray;
+}
+
+.game {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.filter-form {
+    padding: 10px 5px 15px 10px;
+    border: 1px solid;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.filter-row {
+    padding-bottom: 5px;    
+}

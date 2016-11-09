@@ -1,0 +1,74 @@
+﻿
+@model Nba.Web.Models.ScheduleViewModel
+
+@{
+    ViewBag.Title = "Прогноз на " + Model.Condition?.Date?.ToLongDateString();
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="filter-form">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <div class="filter-row">
+            <label>Дата:</label>
+            <div>
+                @Html.DropDownList("Date", new[]
+                {
+                    new SelectListItem {Selected = (Model.Condition?.Date?.Date ?? DateTime.Now.Date) == DateTime.Now.Date, Text = "Сегодня", Value = DateTime.Now.Date.ToShortDateString()},
+                    new SelectListItem {Selected = Model.Condition?.Date?.Date == DateTime.Now.Date.AddDays(-1), Text = "Вчера", Value = DateTime.Now.Date.AddDays(-1).ToShortDateString()},
+                    new SelectListItem {Selected = Model.Condition?.Date?.Date == DateTime.Now.Date.AddDays(1), Text = "Завтра", Value = DateTime.Now.Date.AddDays(1).ToShortDateString()}
+                })
+            </div>
+        </div>
+        <div class="filter-row">
+            <label>Начиная с сезона:</label>
+            <div>
+                @Html.DropDownList("SeasonId", Model.Seasons.Select(s => new SelectListItem { Text = s.Name, Value = s.Id.ToString(), Selected = s.Id == Model.Condition.SeasonId } ))
+            </div>
+        </div>
+        <div style="padding-top: 10px; border-top: 1px solid rgba(0, 0, 0, 0.3);">
+            <input type="submit" value="Применить"/>
+        </div>
+    }
+</div>
+
+<div>
+    @foreach (var game in Model.Games)
+    {
+        <div class="game">
+            <div style="float: left; line-height: 200%;">
+                @game.Date.ToString("t")
+            </div>
+            <div style="float: left; margin: 0 7px;">
+                <span class="@(game.Team1WinPercent > 50 ? "winner" : "") team">
+                    @game.Team1.Name
+                    @if (game.Team1WinPercent > 50)
+                    {
+                        @game.Team1WinPercent
+                        @Html.Raw("%")
+                    }
+                </span>
+                <span>
+                    -
+                </span>
+                <span class="@(game.Team1WinPercent < 50 ? "winner" : "") team">
+                    @game.Team2.Name
+                    @if (game.Team1WinPercent < 50)
+                    {
+                        @(100 - game.Team1WinPercent)
+                        @Html.Raw("%")
+                    }
+                </span>
+                <div class="gameparts">
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <span>
+                            @Convert.ToInt32(Math.Round(game.Stat[i], 2) * 100)%
+                        </span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

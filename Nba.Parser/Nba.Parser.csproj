@@ -78,10 +78,12 @@
     <Compile Include="Contract\Teams.cs" />
     <Compile Include="Contract\User.cs" />
     <Compile Include="FetchTeamsCommand.cs" />
+    <Compile Include="QueryConditions\TeamByNameCondition.cs" />
     <Compile Include="QueryConditions\TeamByCityCondition.cs" />
     <Compile Include="GamesQuery.cs" />
     <Compile Include="QueryConditions\ConferenceByNameCondition.cs" />
     <Compile Include="QueryConditions\DivisionByNameCondition.cs" />
+    <Compile Include="ScheduledGamesQuery.cs" />
     <Compile Include="TeamsQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

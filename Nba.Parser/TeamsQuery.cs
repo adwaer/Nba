@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Nba.Cqrs;
 using Nba.Cqrs.Query;
-using Nba.Dal;
 using Nba.Domain;
 using Nba.Domain.Comparers;
 using Nba.Parser.Contract;

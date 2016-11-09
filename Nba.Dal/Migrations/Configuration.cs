@@ -28,14 +28,14 @@ namespace Nba.Dal.Migrations
                     IsCompleted = true,
                     Url = "https://www.championat.com/basketball/_nba/260/table/all.html"
                 });
-                context.Seasons.Add(new Season
-                {
-                    StartDate = new DateTime(2011, 04, 16),
-                    EndDate = new DateTime(2011, 05, 02),
-                    SeasonType = SeasonType.PlayOff,
-                    IsCompleted = true,
-                    Url = "https://www.championat.com/basketball/_nba/346/table/all/playoff.html"
-                });
+                //context.Seasons.Add(new Season
+                //{
+                //    StartDate = new DateTime(2011, 04, 16),
+                //    EndDate = new DateTime(2011, 05, 02),
+                //    SeasonType = SeasonType.PlayOff,
+                //    IsCompleted = true,
+                //    Url = "https://www.championat.com/basketball/_nba/346/table/all/playoff.html"
+                //});
 
                 context.Seasons.Add(new Season
                 {
@@ -45,14 +45,14 @@ namespace Nba.Dal.Migrations
                     IsCompleted = true,
                     Url = "https://www.championat.com/basketball/_nba/441/table/all.html"
                 });
-                context.Seasons.Add(new Season
-                {
-                    StartDate = new DateTime(2012, 04, 28),
-                    EndDate = new DateTime(2012, 06, 22),
-                    SeasonType = SeasonType.PlayOff,
-                    IsCompleted = true,
-                    Url = "https://www.championat.com/basketball/_nba/514/table/all/playoff.html"
-                });
+                //context.Seasons.Add(new Season
+                //{
+                //    StartDate = new DateTime(2012, 04, 28),
+                //    EndDate = new DateTime(2012, 06, 22),
+                //    SeasonType = SeasonType.PlayOff,
+                //    IsCompleted = true,
+                //    Url = "https://www.championat.com/basketball/_nba/514/table/all/playoff.html"
+                //});
 
                 context.Seasons.Add(new Season
                 {
@@ -62,14 +62,14 @@ namespace Nba.Dal.Migrations
                     IsCompleted = true,
                     Url = "https://www.championat.com/basketball/_nba/600/table/all.html"
                 });
-                context.Seasons.Add(new Season
-                {
-                    StartDate = new DateTime(2013, 04, 21),
-                    EndDate = new DateTime(2013, 06, 21),
-                    SeasonType = SeasonType.PlayOff,
-                    IsCompleted = true,
-                    Url = "https://www.championat.com/basketball/_nba/731/table/all/playoff.html"
-                });
+                //context.Seasons.Add(new Season
+                //{
+                //    StartDate = new DateTime(2013, 04, 21),
+                //    EndDate = new DateTime(2013, 06, 21),
+                //    SeasonType = SeasonType.PlayOff,
+                //    IsCompleted = true,
+                //    Url = "https://www.championat.com/basketball/_nba/731/table/all/playoff.html"
+                //});
 
                 context.Seasons.Add(new Season
                 {
@@ -79,14 +79,14 @@ namespace Nba.Dal.Migrations
                     IsCompleted = true,
                     Url = "https://www.championat.com/basketball/_nba/787/table/all.html"
                 });
-                context.Seasons.Add(new Season
-                {
-                    StartDate = new DateTime(2014, 04, 18),
-                    EndDate = new DateTime(2014, 06, 16),
-                    SeasonType = SeasonType.PlayOff,
-                    IsCompleted = true,
-                    Url = "https://www.championat.com/basketball/_nba/993/table/all/playoff.html"
-                });
+                //context.Seasons.Add(new Season
+                //{
+                //    StartDate = new DateTime(2014, 04, 18),
+                //    EndDate = new DateTime(2014, 06, 16),
+                //    SeasonType = SeasonType.PlayOff,
+                //    IsCompleted = true,
+                //    Url = "https://www.championat.com/basketball/_nba/993/table/all/playoff.html"
+                //});
 
                 context.Seasons.Add(new Season
                 {
@@ -96,14 +96,14 @@ namespace Nba.Dal.Migrations
                     IsCompleted = true,
                     Url = "https://www.championat.com/basketball/_nba/1048/table/all.html"
                 });
-                context.Seasons.Add(new Season
-                {
-                    StartDate = new DateTime(2015, 04, 18),
-                    EndDate = new DateTime(2015, 06, 17),
-                    SeasonType = SeasonType.PlayOff,
-                    IsCompleted = true,
-                    Url = "https://www.championat.com/basketball/_nba/1249/table/all/playoff.html"
-                });
+                //context.Seasons.Add(new Season
+                //{
+                //    StartDate = new DateTime(2015, 04, 18),
+                //    EndDate = new DateTime(2015, 06, 17),
+                //    SeasonType = SeasonType.PlayOff,
+                //    IsCompleted = true,
+                //    Url = "https://www.championat.com/basketball/_nba/1249/table/all/playoff.html"
+                //});
 
                 context.Seasons.Add(new Season
                 {
@@ -113,14 +113,14 @@ namespace Nba.Dal.Migrations
                     IsCompleted = true,
                     Url = "https://www.championat.com/basketball/_nba/1667/table/all.html"
                 });
-                context.Seasons.Add(new Season
-                {
-                    StartDate = new DateTime(2016, 04, 16),
-                    EndDate = new DateTime(2016, 06, 20),
-                    SeasonType = SeasonType.PlayOff,
-                    IsCompleted = true,
-                    Url = "https://www.championat.com/basketball/_nba/1742/table/all/playoff.html"
-                });
+                //context.Seasons.Add(new Season
+                //{
+                //    StartDate = new DateTime(2016, 04, 16),
+                //    EndDate = new DateTime(2016, 06, 20),
+                //    SeasonType = SeasonType.PlayOff,
+                //    IsCompleted = true,
+                //    Url = "https://www.championat.com/basketball/_nba/1742/table/all/playoff.html"
+                //});
             }
 
             //  This method will be called after migrating to the latest version.

@@ -15,18 +15,23 @@ namespace Nba.Parser
     public class GamesQuery : IQuery<Season, List<Game>>
     {
         private readonly DbContext _dbContext;
+        private readonly Dictionary<string, Team> _teams;
 
         public GamesQuery(DbContext dbContext)
         {
             _dbContext = dbContext;
+            _teams = new Dictionary<string, Team>();
         }
 
         public List<Game> Execute(Season season)
         {
             List<Game> games = new List<Game>();
 
-            var teamSeasonUrls = GetNodes(season.Url, "//div[@class=\"sport__table\"]/table[1]/tr/td[@class=\"_big\"]/a[@href]")
+            var teamSeasonUrls = GetNodes(season.Url,
+                "//div[@class=\"sport__table\"]/table[1]/tr/td[@class=\"_big\"]/a[@href]")
                 .Select(a => a.Attributes["href"].Value);
+
+            var simpleQuery = new SimpleQuery(_dbContext);
 
             foreach (var teamSeasonUrl in teamSeasonUrls)
             {
@@ -41,6 +46,22 @@ namespace Nba.Parser
                         continue;
                     }
 
+                    var score = columns[4]
+                        .InnerText
+                        .Split(new[] {' ', '\n', ':'}, StringSplitOptions.RemoveEmptyEntries)
+                        .Select(int.Parse)
+                        .ToArray();
+
+                    var gameUrl = columns[4]
+                        .SelectSingleNode("a")
+                        .Attributes["href"]
+                        .Value;
+
+                    if (games.Any(g => g.Url == gameUrl))
+                    {
+                        continue;
+                    }
+
                     var date = columns[1].InnerText
                         .Split('.')
                         .Select(int.Parse)
@@ -51,7 +72,7 @@ namespace Nba.Parser
                         .Select(int.Parse)
                         .ToArray();
 
-                    var teams = columns[3].InnerText.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                    //var teams = columns[3].InnerText.Split(new[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
                     var teamBreakerIndex = columns[3]
                         .InnerText
@@ -78,34 +99,49 @@ namespace Nba.Parser
                     //    }
                     //}
 
-                    var team1 = new SimpleQuery(_dbContext)
-                        .Execute(new TeamByCityCondition(firstTeamName))
-                        .SingleOrDefault();
-                    var team2 = new SimpleQuery(_dbContext)
-                        .Execute(new TeamByCityCondition(secondTeamName))
-                        .SingleOrDefault();
+                    Team team1;
+                    if (!_teams.TryGetValue(firstTeamName, out team1))
+                    {
+                        team1 = simpleQuery
+                            .Execute(new TeamByCityCondition(firstTeamName))
+                            .SingleOrDefault() ??
+                                simpleQuery
+                                    .Execute(new TeamByNameCondition(firstTeamName))
+                                    .SingleOrDefault();
+                        _teams[firstTeamName] = team1;
+                    }
+                    Team team2;
+                    if (!_teams.TryGetValue(secondTeamName, out team2))
+                    {
+                        team2 = simpleQuery
+                            .Execute(new TeamByCityCondition(secondTeamName))
+                            .SingleOrDefault() ??
+                                simpleQuery
+                                    .Execute(new TeamByNameCondition(secondTeamName))
+                                    .SingleOrDefault();
+                        _teams[secondTeamName] = team2;
+                    }
 
                     if (team1 == null || team2 == null)
                     {
                         continue;
                     }
 
-                    var score = columns[4]
-                        .InnerText
-                        .Split(new[] { ' ', '\n', ':' }, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(int.Parse)
-                        .ToArray();
-
-                    var gameUrl = columns[4]
-                        .SelectSingleNode("a")
-                        .Attributes["href"]
-                        .Value;
-
                     var gamePartsNode = GetNodes($"https://www.championat.com{gameUrl}",
                         "//div[@class=\"match__count__extra\"]/div")
                         .First()
                         .InnerText
-                        .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                        .Split(new[] {'(', ')', ','}, StringSplitOptions.RemoveEmptyEntries);
+                    
+                    while (gamePartsNode.Length < 4)
+                    {
+                        Thread.Sleep(10000);
+                        gamePartsNode = GetNodes($"https://www.championat.com{gameUrl}",
+                            "//div[@class=\"match__count__extra\"]/div")
+                            .First()
+                            .InnerText
+                            .Split(new[] {'(', ')', ','}, StringSplitOptions.RemoveEmptyEntries);
+                    }
 
                     var game = new Game
                     {
@@ -121,9 +157,7 @@ namespace Nba.Parser
 
                     foreach (var gamePart in gamePartsNode)
                     {
-                        if (string.Equals(gamePart, "ОТ ", StringComparison.CurrentCultureIgnoreCase)
-                            || string.Equals(gamePart, "2ОТ ", StringComparison.CurrentCultureIgnoreCase)
-                            || string.Equals(gamePart, "3ОТ ", StringComparison.CurrentCultureIgnoreCase))
+                        if (gamePart.Contains("ОТ"))
                         {
                             continue;
                         }

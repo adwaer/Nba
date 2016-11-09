@@ -14,5 +14,6 @@ namespace Nba.Dal
         public DbSet<Conference> Conferences { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<Season> Seasons { get; set; }
+        public DbSet<ScheduledGame> ScheduledGames { get; set; }
     }
 }
