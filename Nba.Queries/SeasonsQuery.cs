@@ -20,7 +20,8 @@ namespace Nba.Queries
                     .Select(s => new SeasonDto
                     {
                         Url = s.Url,
-                        Name = $"{s.StartDate.Year} - {s.EndDate.Year}",
+                        StartDate = s.StartDate,
+                        EndDate = s.EndDate,
                         Id = s.Id
                     });
 

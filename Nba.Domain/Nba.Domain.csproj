@@ -55,6 +55,11 @@
     <Compile Include="Division.cs" />
     <Compile Include="Dto\GameDto.cs" />
     <Compile Include="Dto\GamePartDto.cs" />
+    <Compile Include="Dto\GameStatDto.cs" />
+    <Compile Include="Dto\OnlineGame.cs" />
+    <Compile Include="Dto\OnlineGameStat.cs" />
+    <Compile Include="Dto\QuarterGameDto.cs" />
+    <Compile Include="Dto\QuarterGamePartDto.cs" />
     <Compile Include="Dto\SeasonDto.cs" />
     <Compile Include="Dto\TeamDto.cs" />
     <Compile Include="Dto\ScheduledGameDto.cs" />

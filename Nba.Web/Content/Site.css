@@ -45,7 +45,19 @@ textarea {
     border-radius: 4px;
 }
 
-.gameparts {
+.games {
+    font-size: 10px;
+    color: gray;
+    float: left;
+    border-bottom: 1px solid;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0 3px;
+    margin-right: 5px;
+    width: 110px;
+}
+
+.gameParts {
     font-size: 10px;
     color: gray;
 }
@@ -65,4 +77,18 @@ textarea {
 
 .filter-row {
     padding-bottom: 5px;    
+}
+
+.stat {
+    margin-left: 5px;
+}
+
+.stat-value {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.stat-kef {
+    color: rgb(255, 216, 188);
+    margin-left: 10px;
 }

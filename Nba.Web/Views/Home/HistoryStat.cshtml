@@ -1,0 +1,53 @@
+﻿
+@using System.Configuration
+@model Nba.Web.Models.BetForkViewModel
+
+@{
+    ViewBag.Title = "Генератор ставок";
+}
+
+<div>
+    <div class="form-group">
+        <label>Адрес матчей Фонбет</label>
+        <input class="form-control" type="url" value="@ConfigurationManager.AppSettings["fon"]" />
+    </div>
+    <div class="form-group">
+        <label>Адрес матчей Винлайн</label>
+        <input class="form-control" type="url" value="@ConfigurationManager.AppSettings["winline"]" />
+    </div>
+    <div>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Тоталы</th>
+                    <th>Форы</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Team 1</td>
+                    <td>
+                        <div>
+                            <span class="stat">
+                                <span class="label label-info">
+                                    <label class="stat-value">+137.5</label><span class="stat-kef">11</span>
+                                </span>
+                            </span><span class="stat">
+                                <span class="label label-info">
+                                    <label class="stat-value">+137.5</label><span class="stat-kef">11</span>
+                                </span>
+                            </span>
+                        </div>
+                    </td>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Team 2</td>
+                    <td></td>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

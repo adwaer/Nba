@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -10,6 +11,17 @@ namespace Nba.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public async Task<ActionResult> HistoryStat(BetsForkCondition condition)
+        {
+            var winlineGames = await new OnlineGamesQuery()
+                .Execute(condition?.FonUrl ?? ConfigurationManager.AppSettings["fon"]);
+
+            return View(new BetForkViewModel
+            {
+                Condition = condition
+            });
+        }
+
         public async Task<ActionResult> Index(DayGamesCondition condition)
         {
             condition = condition ?? new DayGamesCondition();
