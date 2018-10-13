@@ -9,31 +9,8 @@ namespace Nba
 {
     class Program
     {
-        class BaseClass
-        {
-            public virtual void Method1()
-            {
-                Console.WriteLine("Base - Method1");
-            }
-        }
-
-        class DerivedClass : BaseClass
-        {
-            public new void Method1()
-            {
-                Console.WriteLine("Derived - Method1");
-            }
-        }
-
-
         static void Main(string[] args)
         {
-            BaseClass b = new DerivedClass();
-            b.Method1();
-
-            Console.ReadLine();
-
-
 #if DEBUG
             //args = new[] { "teams_fetch" };
             args = new[] { "teams_fetch", "games_fetch", "schedule_games_fetch" };
