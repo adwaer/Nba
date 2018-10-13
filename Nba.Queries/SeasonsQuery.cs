@@ -22,7 +22,8 @@ namespace Nba.Queries
                         Url = s.Url,
                         StartDate = s.StartDate,
                         EndDate = s.EndDate,
-                        Id = s.Id
+                        Id = s.Id,
+                        IsCompleted = s.IsCompleted
                     });
 
                 Cache = seasons.ToArray();

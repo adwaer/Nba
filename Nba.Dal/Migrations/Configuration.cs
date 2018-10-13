@@ -12,7 +12,7 @@ namespace Nba.Dal.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "Nba.Dal.DefaultCtx";
         }
 
@@ -111,6 +111,15 @@ namespace Nba.Dal.Migrations
                     EndDate = new DateTime(2016, 04, 14),
                     SeasonType = SeasonType.Regular,
                     IsCompleted = true,
+                    Url = "https://www.championat.com/basketball/_nba/1667/table/all.html"
+                });
+
+                context.Seasons.Add(new Season
+                {
+                    StartDate = new DateTime(2016, 10, 25),
+                    EndDate = new DateTime(2017, 04, 12),
+                    SeasonType = SeasonType.Regular,
+                    IsCompleted = false,
                     Url = "https://www.championat.com/basketball/_nba/1667/table/all.html"
                 });
                 //context.Seasons.Add(new Season

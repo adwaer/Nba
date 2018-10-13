@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18e165be-f15d-43be-a115-86bdd0916c3f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Nba.Dal/DefaultCtx.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Dal/DefaultCtx.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Dal/Migrations/201611061424434_init.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Dal/Migrations/201611061424434_init.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Dal/Migrations/201611061424434_init.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Dal/Migrations/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Dal/Migrations/Configuration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Dal/Nba.Dal.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Dal/Nba.Dal.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Conference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Division.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Dto/GameDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Dto/GamePartDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Dto/QuarterGameDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Domain/Dto/QuarterGameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Dto/ScheduledGameDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Domain/Dto/ScheduledGameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Dto/SeasonDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Domain/Dto/SeasonDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Dto/TeamDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Nba.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Domain/Nba.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Domain/Team.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Domain/Team.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/FetchTeamsCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/GamesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Parser/GamesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/Nba.Parser.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Parser/Nba.Parser.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/QueryConditions/ConferenceByNameCondition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/QueryConditions/DivisionByNameCondition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/QueryConditions/TeamByCityCondition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/QueryConditions/TeamByNameCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Parser/QueryConditions/TeamByNameCondition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/ScheduledGamesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Parser/ScheduledGamesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Parser/TeamsQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Parser/TeamsQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Queries/DayGamesQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Queries/DayGamesQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Queries/SeasonsQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Queries/SeasonsQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Web/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Web/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Web/Nba.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Web/Nba.Web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Web/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Web/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba.Web/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Nba.Web/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/Nba/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nba/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Nba/Program.cs" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Nba/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="99" column="31" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="31" />
+              <folding>
+                <marker date="1479732292469" expanded="true" signature="6:109" ph="..." />
+                <marker date="1479732292469" expanded="true" signature="124:2816" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="144:2814" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="174:317" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="226:307" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="357:499" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="405:489" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="541:2808" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="891:1355" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="1411:1955" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="2002:2715" ph="{...}" />
+                <marker date="1479732292469" expanded="true" signature="2213:2665" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.config" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Nba/App.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="76" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ReadLine</find>
+      <find>SaveChanges</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Nba/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Nba/App.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Nba.Web/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Nba (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Nba (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Presentation" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Nba (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Presentation" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Nba" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Nba (7 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Presentation" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Nba.Web" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Project.Presentation\Nba">
+    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
+    </configuration>
+    <configuration name="Presentation\Nba" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Nba/bin/Debug/Nba.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Nba/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Nba/Nba.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.5.2" />
+    </configuration>
+    <list>
+      <item itemvalue=".NET Project.Default" />
+      <item itemvalue=".NET Project.Presentation\Nba" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Project.Presentation\Nba" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18e165be-f15d-43be-a115-86bdd0916c3f" name="Default" comment="" />
+      <created>1529948403079</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529948403079</updated>
+      <workItem from="1529948404799" duration="566000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="566000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="REST Client" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" weight="0.32897604" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Nba/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="99" column="31" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="31" />
+          <folding>
+            <marker date="1479732292469" expanded="true" signature="6:109" ph="..." />
+            <marker date="1479732292469" expanded="true" signature="124:2816" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="144:2814" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="174:317" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="226:307" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="357:499" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="405:489" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="541:2808" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="891:1355" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="1411:1955" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="2002:2715" ph="{...}" />
+            <marker date="1479732292469" expanded="true" signature="2213:2665" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Nba/App.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="76" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

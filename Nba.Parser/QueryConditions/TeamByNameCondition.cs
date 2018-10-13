@@ -16,13 +16,12 @@ namespace Nba.Parser.QueryConditions
 
         public Expression<Func<Team, bool>> Get()
         {
-            var strings = _team.Split(' ');
+            //var strings = _team.Split(' ');
 
-            var team = strings[strings.Length - 1];
-            var teamLong = $"{strings[strings.Length - 2]} {strings[strings.Length - 1]}";
+            //var team = strings[strings.Length - 1];
+            //var teamLong = $"{strings[strings.Length - 2]} {strings[strings.Length - 1]}";
 
-            return entity => entity.Name == team
-                             || entity.Name == teamLong;
+            return entity => entity.Name == _team;
         }
     }
 }

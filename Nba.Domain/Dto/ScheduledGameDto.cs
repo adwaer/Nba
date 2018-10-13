@@ -7,14 +7,18 @@ namespace Nba.Domain.Dto
     public class ScheduledGameDto
     {
         public DateTime Date { get; set; }
-        public TeamDto Team1 { get; set; }
-        public TeamDto Team2 { get; set; }
+        public Team Team1 { get; set; }
+        public Team Team2 { get; set; }
         public decimal Team1WinPercent { get; set; }
         public QuarterGameDto[] Stat { get; set; }
         public GameStatDto[] Games { get; set; }
+
+        public int Team1Score { get; set; }
+        public int Team2Score { get; set; }
+
         //public GameDto[] HistoryGames { get; set; }
 
-        public static ScheduledGameDto Get(ScheduledGame game, Game[] games)
+        public static ScheduledGameDto Get(ScheduledGame game, DateTime date, Game[] games)
         {
             //var dictionary = new Dictionary<int, List<GamePart>>();
             var stat = new[]
@@ -43,46 +47,72 @@ namespace Nba.Domain.Dto
 
             var gameDtos = new List<GameStatDto>();
 
+            int team1Score = 0;
+            int team2Score = 0;
+
             foreach (var g in games)
             {
-                gameDtos.Add(new GameStatDto
+                if (!g.Season.IsCompleted && g.DateTime.Date == date)
                 {
-                    Url = g.Url,
-                    Date = g.DateTime,
-                    Team1Win = g.Winner == game.Team1,
-                    Team1Score = g.Winner == game.Team1 ? g.WinnerScore : g.LoserScore,
-                    Team2Score = g.Winner == game.Team1 ? g.LoserScore : g.WinnerScore
-                });
+                    team1Score = g.Winner == game.Team1 ? g.WinnerScore : g.LoserScore;
+                    team2Score = g.Winner == game.Team1 ? g.LoserScore : g.WinnerScore;
+                }
+                else
+                {
+                    gameDtos.Add(new GameStatDto
+                    {
+                        Url = g.Url,
+                        Date = g.DateTime,
+                        Team1Win = g.Winner == game.Team1,
+                        Team1Score = g.Winner == game.Team1 ? g.WinnerScore : g.LoserScore,
+                        Team2Score = g.Winner == game.Team1 ? g.LoserScore : g.WinnerScore
+                    });
+                }
 
                 var gameParts = g.GameParts.ToArray();
                 for (int i = 0; i < 4; i++)
                 {
+
                     var gamePart = gameParts[i];
                     var isTeam1Winner = gamePart.Winner == game.Team1;
 
                     var quarterGameDto = stat[i];
-                    if (isTeam1Winner)
+
+                    if (!g.Season.IsCompleted && g.DateTime.Date == date)
                     {
-                        quarterGameDto.Percent += 100;
-                        quarterGameDto.Parts.Add(new QuarterGamePartDto
+                        quarterGameDto.CurrentSeasonScore = new QuarterGamePartDto
                         {
-                            Team1Score = gamePart.WinnerScore,
-                            Team1Win = true,
-                            Team2Score = gamePart.LoserScore,
-                            Date = game.Date
-                        });
+                            Team1Score = isTeam1Winner ? gamePart.WinnerScore : gamePart.LoserScore,
+                            Team2Score = isTeam1Winner ? gamePart.LoserScore : gamePart.WinnerScore,
+                            Team1Win = isTeam1Winner,
+                            Date = game.Date,
+
+                        };
                     }
                     else
                     {
-                        quarterGameDto.Parts.Add(new QuarterGamePartDto
+                        if (isTeam1Winner)
                         {
-                            Team1Score = gamePart.LoserScore,
-                            Team1Win = false,
-                            Team2Score = gamePart.WinnerScore,
-                            Date = game.Date
-                        });
+                            quarterGameDto.Percent += 100;
+                            quarterGameDto.Parts.Add(new QuarterGamePartDto
+                            {
+                                Team1Score = gamePart.WinnerScore,
+                                Team1Win = true,
+                                Team2Score = gamePart.LoserScore,
+                                Date = game.Date
+                            });
+                        }
+                        else
+                        {
+                            quarterGameDto.Parts.Add(new QuarterGamePartDto
+                            {
+                                Team1Score = gamePart.LoserScore,
+                                Team1Win = false,
+                                Team2Score = gamePart.WinnerScore,
+                                Date = game.Date
+                            });
+                        }
                     }
-                    
                 }
             }
 
@@ -108,11 +138,13 @@ namespace Nba.Domain.Dto
             return new ScheduledGameDto
             {
                 Date = game.Date,
-                Team1 = TeamDto.Get(game.Team1),
-                Team2 = TeamDto.Get(game.Team2),
+                Team1 = game.Team1,
+                Team2 = game.Team2,
                 Team1WinPercent = team1WinPercent,
                 Stat = stat,
-                Games = gameDtos.ToArray()
+                Games = gameDtos.ToArray(),
+                Team1Score = team1Score,
+                Team2Score = team2Score
                 //HistoryGames = games.Select(GameDto.Get).ToArray()
             };
         }

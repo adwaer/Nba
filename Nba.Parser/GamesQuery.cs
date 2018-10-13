@@ -46,11 +46,27 @@ namespace Nba.Parser
                         continue;
                     }
 
-                    var score = columns[4]
+                    var strings = columns[4]
                         .InnerText
-                        .Split(new[] {' ', '\n', ':'}, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(int.Parse)
-                        .ToArray();
+                        .Split(new[] { ' ', '\n', ':' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (strings[0] == "-")
+                    {
+                        break;
+                    }
+
+                    int[] score = null;
+                    //try
+                    //{
+                    score = strings
+                        .Take(2)
+                    .Select(int.Parse)
+                    .ToArray();
+                    //}
+                    //catch (Exception ex)
+                    //{
+
+                    //}
 
                     var gameUrl = columns[4]
                         .SelectSingleNode("a")
@@ -103,7 +119,7 @@ namespace Nba.Parser
                     if (!_teams.TryGetValue(firstTeamName, out team1))
                     {
                         team1 = simpleQuery
-                            .Execute(new TeamByCityCondition(firstTeamName))
+                            .Execute(new TeamByNameCondition(firstTeamName))
                             .SingleOrDefault() ??
                                 simpleQuery
                                     .Execute(new TeamByNameCondition(firstTeamName))
@@ -114,7 +130,7 @@ namespace Nba.Parser
                     if (!_teams.TryGetValue(secondTeamName, out team2))
                     {
                         team2 = simpleQuery
-                            .Execute(new TeamByCityCondition(secondTeamName))
+                            .Execute(new TeamByNameCondition(secondTeamName))
                             .SingleOrDefault() ??
                                 simpleQuery
                                     .Execute(new TeamByNameCondition(secondTeamName))
@@ -131,8 +147,8 @@ namespace Nba.Parser
                         "//div[@class=\"match__count__extra\"]/div")
                         .First()
                         .InnerText
-                        .Split(new[] {'(', ')', ','}, StringSplitOptions.RemoveEmptyEntries);
-                    
+                        .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
+
                     while (gamePartsNode.Length < 4)
                     {
                         Thread.Sleep(10000);
@@ -140,7 +156,7 @@ namespace Nba.Parser
                             "//div[@class=\"match__count__extra\"]/div")
                             .First()
                             .InnerText
-                            .Split(new[] {'(', ')', ','}, StringSplitOptions.RemoveEmptyEntries);
+                            .Split(new[] { '(', ')', ',' }, StringSplitOptions.RemoveEmptyEntries);
                     }
 
                     var game = new Game

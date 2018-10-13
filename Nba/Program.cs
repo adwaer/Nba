@@ -2,17 +2,41 @@
 using System.Diagnostics;
 using System.Linq;
 using Nba.Dal;
+using Nba.Domain;
 using Nba.Parser;
 
 namespace Nba
 {
     class Program
     {
+        class BaseClass
+        {
+            public virtual void Method1()
+            {
+                Console.WriteLine("Base - Method1");
+            }
+        }
+
+        class DerivedClass : BaseClass
+        {
+            public new void Method1()
+            {
+                Console.WriteLine("Derived - Method1");
+            }
+        }
+
+
         static void Main(string[] args)
         {
+            BaseClass b = new DerivedClass();
+            b.Method1();
+
+            Console.ReadLine();
+
+
 #if DEBUG
-            args = new[] { "games_fetch" };
-            //args = new[] { "teams_fetch", "games_fetch", "schedule_games_fetch" };
+            //args = new[] { "teams_fetch" };
+            args = new[] { "teams_fetch", "games_fetch", "schedule_games_fetch" };
 #endif
 
             var ctx = new DefaultCtx();
@@ -24,10 +48,11 @@ namespace Nba
                 var stopwatch = new Stopwatch();
                 stopwatch.Start();
 
-                var fetchCmd = new FetchTeamsCommand(ctx);
-                fetchCmd
-                    .Execute()
-                    .Wait();
+                var teams = new TeamsQuery(ctx)
+                    .Execute();
+
+                ctx.Teams.AddRange(teams);
+                ctx.SaveChanges();
 
                 Console.WriteLine(
                     $"teams_fetch completed in: {stopwatch.Elapsed}");
@@ -72,14 +97,7 @@ namespace Nba
                         $"parsed season: {season.Url}, game count: {games.Count}, time spent: {stopwatch.Elapsed}");
                 }
 
-                try
-                {
-                    ctx.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw;
-                }
+                ctx.SaveChanges();
             }
 
             Console.WriteLine("This is the end");

@@ -1,0 +1,14 @@
+﻿@model Nba.Web.Models.FetchGamesViewModel
+
+@{
+    ViewBag.Title = "Обновление игр открытого сезона";
+}
+
+<h2>@ViewBag.Title</h2>
+<div>
+    @Model.Result
+</div>
+
+<div>
+    @Html.ActionLink("К расписанию игр на сегодня", "Index")
+</div>

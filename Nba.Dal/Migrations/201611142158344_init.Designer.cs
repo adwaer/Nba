@@ -13,7 +13,7 @@ namespace Nba.Dal.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201611061424434_init"; }
+            get { return "201611142158344_init"; }
         }
         
         string IMigrationMetadata.Source

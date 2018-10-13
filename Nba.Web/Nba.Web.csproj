@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Adwaer.Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Adwaer.Entity.1.0.3\lib\net452\Adwaer.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -205,6 +209,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BetForkViewModel.cs" />
     <Compile Include="Models\BetsForkCondition.cs" />
+    <Compile Include="Models\FetchGamesViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ScheduleViewModel.cs" />
@@ -269,6 +274,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\HistoryStat.cshtml" />
+    <Content Include="Views\Home\FetchOpenedSeason.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,9 +292,17 @@
       <Project>{6d3a9499-f65b-4fd3-9dd0-caf62304fb3e}</Project>
       <Name>Nba.Cqrs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nba.Dal\Nba.Dal.csproj">
+      <Project>{C6AA3965-BC2D-4582-AAC4-CADE6E9F7DC6}</Project>
+      <Name>Nba.Dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nba.Domain\Nba.Domain.csproj">
       <Project>{3b1b5a6c-9fa7-4d14-9a86-777647e3a574}</Project>
       <Name>Nba.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nba.Parser\Nba.Parser.csproj">
+      <Project>{54432B6E-D007-4704-A753-CF0A2F4330D5}</Project>
+      <Name>Nba.Parser</Name>
     </ProjectReference>
     <ProjectReference Include="..\Nba.Queries\Nba.Queries.csproj">
       <Project>{25a9d0fc-156f-4702-adb7-7d35958b5e35}</Project>

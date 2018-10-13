@@ -48,14 +48,14 @@ namespace Nba.Parser
                     .ToArray();
 
                 var team1 = simpleQuery
-                        .Execute(new TeamByCityCondition(teamsName[0]))
+                        .Execute(new TeamByNameCondition(teamsName[0]))
                         .SingleOrDefault() ??
                         simpleQuery
                         .Execute(new TeamByNameCondition(teamsName[0]))
                         .SingleOrDefault();
 
                 var team2 = simpleQuery
-                    .Execute(new TeamByCityCondition(teamsName[1]))
+                    .Execute(new TeamByNameCondition(teamsName[1]))
                     .SingleOrDefault() ??
                         simpleQuery
                         .Execute(new TeamByNameCondition(teamsName[1]))

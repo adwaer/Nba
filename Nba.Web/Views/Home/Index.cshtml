@@ -48,6 +48,7 @@
                 <th>Победы 1</th>
                 <th>Процент</th>
                 <th>Победы 2</th>
+                <th>Результат</th>
                 <th>Действия</th>
             </tr>
         </thead>
@@ -62,6 +63,7 @@
                 <td>@game.Games.Sum(g => g.Team1Win ? 1 : 0)</td>
                 <td>@(game.Games.Sum(g => g.Team1Win ? 1 : 0)*100/game.Games.Length)%</td>
                 <td>@game.Games.Sum(g => g.Team1Win ? 0 : 1)</td>
+                <td>@string.Format("{0} / {1}", game?.Team1Score, game?.Team2Score)</td>
                 <td>
                     <a style="cursor: pointer; font-size: 10px;" onclick="window.toggleMathces(event);">матчи</a>
                     <span>/</span>
@@ -93,6 +95,7 @@
                     <td>@stat.Parts.Sum(p => p.Team1Win ? 1 : 0)</td>
                     <td>@stat.Percent%</td>
                     <td>@stat.Parts.Sum(p => p.Team1Win ? 0 : 1)</td>
+                    <td>@string.Format("{0} / {1}", stat?.CurrentSeasonScore?.Team1Score, stat?.CurrentSeasonScore?.Team2Score)</td>
                     <td>
                         <a style="cursor: pointer; font-size: 10px;" onclick="window.toggleMathces(event);">игры</a>
                     </td>
@@ -113,6 +116,11 @@
         }
         </tbody>
     </table>
+</div>
+
+
+<div>
+    @Html.ActionLink("Обновить результаты игр", "FetchOpenedSeason")
 </div>
 
 <script>

@@ -40,7 +40,7 @@ namespace Nba.Queries
             var teamGames = new List<ScheduledGameDto>();
             foreach (var scheduledGame in scheduledGames)
             {
-                teamGames.Add(ScheduledGameDto.Get(scheduledGame, await gamesQueryable
+                teamGames.Add(ScheduledGameDto.Get(scheduledGame, date, await gamesQueryable
                     .Where(g => scheduledGame.Team1.Id == g.Winner.Id && scheduledGame.Team2.Id == g.Loser.Id ||
                                 scheduledGame.Team2.Id == g.Winner.Id && scheduledGame.Team1.Id == g.Loser.Id)
                     .ToArrayAsync()));

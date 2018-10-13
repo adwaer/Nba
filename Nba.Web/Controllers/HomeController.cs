@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Nba.Dal;
+using Nba.Domain;
+using Nba.Parser;
 using Nba.Queries;
 using Nba.Queries.Criteria;
 using Nba.Web.Models;
@@ -42,6 +47,32 @@ namespace Nba.Web.Controllers
                 Condition = condition,
                 Seasons = seasons
             });
+        }
+
+        public async Task<ActionResult> FetchOpenedSeason()
+        {
+            var defaultCtx = new DefaultCtx();
+
+            var season = await defaultCtx.Seasons
+                .FirstOrDefaultAsync(s => !s.IsCompleted);
+
+            if (season == null)
+            {
+                return View(new FetchGamesViewModel { Result = "Нет открытых сезонов" });
+            }
+
+            var dbGames = await defaultCtx
+                .Games
+                .ToArrayAsync();
+
+            var games = new GamesQuery(defaultCtx)
+                .Execute(season)
+                .Where(dbg => dbGames.All(g => g.Url != dbg.Url));
+
+            defaultCtx.Games.AddRange(games);
+            defaultCtx.SaveChanges();
+
+            return View(new FetchGamesViewModel { Result = "Ok" });
         }
     }
 }
